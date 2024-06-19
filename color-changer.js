@@ -12,7 +12,7 @@ function AssignAllTicketColors() {
 		let currentTicketLinkElement = ticketLinkElements[i]
 		let currentTicketTextElement = ticketTextElements[i]
 		let ticketNumber = GetTicketNumber(currentTicketLinkElement)
-		if (ticketNumber > 0) {
+		if (currentTicketLinkElement.href.includes("browse") && ticketNumber > 0) {
 			AssignTicketColor(currentTicketTextElement, ticketNumber)
 			AssignTicketColor(currentTicketLinkElement, ticketNumber)
 		}
