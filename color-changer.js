@@ -12,8 +12,10 @@ function AssignAllTicketColors() {
 		let currentTicketLinkElement = ticketLinkElements[i]
 		let currentTicketTextElement = ticketTextElements[i]
 		let ticketNumber = GetTicketNumber(currentTicketLinkElement)
-		AssignTicketColor(currentTicketTextElement, ticketNumber)
-		AssignTicketColor(currentTicketLinkElement, ticketNumber)
+		if (ticketNumber > 0) {
+			AssignTicketColor(currentTicketTextElement, ticketNumber)
+			AssignTicketColor(currentTicketLinkElement, ticketNumber)
+		}
 	}
 }
 
