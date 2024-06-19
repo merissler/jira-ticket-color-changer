@@ -1,4 +1,8 @@
-Works in all chromium-based browsers (chrome, edge, opera, etc.)
+[Installation](https://github.com/merissler/jira-ticket-color-changer/edit/main/README.md#installation)
+
+Works in all Chromium-based browsers (chrome, edge, opera, etc.)
+
+Would also work in some Firefox-based browsers with a little modification
 
 Only works for people who work at Goods Technology Services
 
