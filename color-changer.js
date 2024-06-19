@@ -9,10 +9,11 @@ function AssignAllTicketColors() {
 	ticketLinkElements = GetTicketLinkElements()
 	ticketTextElements = GetTicketTextElements()
 	for (let i = 0; i < ticketLinkElements.length; i++) {
-		let currentTicketElement = ticketLinkElements[i]
+		let currentTicketLinkElement = ticketLinkElements[i]
 		let currentTicketTextElement = ticketTextElements[i]
-		let ticketNumber = GetTicketNumber(currentTicketElement)
+		let ticketNumber = GetTicketNumber(currentTicketLinkElement)
 		AssignTicketColor(currentTicketTextElement, ticketNumber)
+		AssignTicketColor(currentTicketLinkElement, ticketNumber)
 	}
 }
 
@@ -26,7 +27,7 @@ observer.observe(document.body, { childList: true, subtree: true });
 function AssignTicketColor(ticketTextElement, seed) {
 	let uniqueHue = (seed * largeNumber) % 360
 	let uniqueColor = HsvToHex(uniqueHue, 1, 1)
-	ticketTextElement.style.color = uniqueColor
+	ticketTextElement.style = "color: " + uniqueColor.toString() + " !important;"
 }
 
 function GetTicketLinkElements() {
