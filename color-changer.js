@@ -33,14 +33,22 @@ function AssignTicketColor(ticketTextElement, seed) {
 }
 
 function GetTicketLinkElements() {
+	// for https://goodstech.atlassian.net/jira/your-work
 	var ticketLinkElements = Array.from(document.getElementsByClassName("bu4bgh-5 dLPyHk"))
+	// for https://goodstech.atlassian.net/browse/*
 	ticketLinkElements = ticketLinkElements.concat(Array.from(document.querySelectorAll('[data-testid="issue.views.issue-base.foundation.breadcrumbs.current-issue.item"]')))
+	// for https://goodstech.atlassian.net/jira/dashboards/*
+	ticketLinkElements = ticketLinkElements.concat(Array.from(document.getElementsByClassName("issue-link")))
 	return ticketLinkElements
 }
 
 function GetTicketTextElements() {
+	// for https://goodstech.atlassian.net/jira/your-work
 	var ticketTexts = Array.from(document.getElementsByClassName("bu4bgh-0 evJEbS"))
+	// for https://goodstech.atlassian.net/browse/*
 	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("_1wyb1tcg _vwz41f4h _k48pbfng _1dyzz5jk _1bsb1osq _19pkidpf _2hwxidpf _otyridpf _18u0idpf _ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _syaz1fxt _osi5fg65 _mc2h1hna _14fy1hna")))
+	// for https://goodstech.atlassian.net/jira/dashboards/*
+	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("issue-link")))
 	return ticketTexts
 }
 
