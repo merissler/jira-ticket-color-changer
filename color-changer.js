@@ -5,16 +5,6 @@ window.onload = function () {
 	AssignAllTicketColors()
 }
 
-// ChatGPT Code
-const targetNode = document.querySelector('title');
-const config = { childList: true };
-const callback = () => {
-	AssignAllTicketColors()
-};
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, config);
-// End ChatGPT Code
-
 function AssignAllTicketColors() {
 	ticketLinkElements = GetTicketLinkElements()
 	ticketTextElements = GetTicketTextElements()
@@ -25,6 +15,13 @@ function AssignAllTicketColors() {
 		AssignTicketColor(currentTicketTextElement, ticketNumber)
 	}
 }
+
+var observer = new MutationObserver(function(mutationsList, observer) {
+    for (var mutation of mutationsList) {
+        AssignAllTicketColors()
+    }
+});
+observer.observe(document.body, { childList: true, subtree: true });
 
 function AssignTicketColor(ticketTextElement, seed) {
 	let uniqueHue = (seed * largeNumber) % 360
