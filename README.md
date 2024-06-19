@@ -1,4 +1,4 @@
-[Installation](https://github.com/merissler/jira-ticket-color-changer/edit/main/README.md#installation)
+[Installation](https://github.com/merissler/jira-ticket-color-changer?tab=readme-ov-file#installation)
 
 Works in all Chromium-based browsers (chrome, edge, opera, etc.)
 
