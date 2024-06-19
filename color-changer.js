@@ -53,7 +53,7 @@ function GetTicketTextElements() {
 }
 
 function GetTicketNumber(ticketElement) {
-	return ticketElement.href.match(/\d{4}/)
+	return ticketElement.href.match(/\d{4,}/)
 }
 
 function HsvToHex(h, s, v) {
