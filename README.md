@@ -14,4 +14,4 @@ Currently works on theses pages:
 
 ![image](https://github.com/merissler/jira-ticket-color-changer/assets/173270943/fcba96c4-c77a-4fa5-941b-adf3bdb2610c)
 
-![image](https://github.com/merissler/jira-ticket-color-changer/assets/173270943/9d8347be-ff5f-4f24-80cf-870f954a92fa)
+![image](https://github.com/merissler/jira-ticket-color-changer/assets/173270943/b280c8a2-3617-4621-bc11-7b800d8bf90c)
