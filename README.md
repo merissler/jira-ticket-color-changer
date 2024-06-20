@@ -16,6 +16,8 @@ Currently works on theses pages:
 
 `https://goodstech.atlassian.net/jira/dashboards/*`
 
+`https://goodstech.atlassian.net/issues/*`
+
 # Screenshots
 
 ![image](https://github.com/merissler/jira-ticket-color-changer/assets/173270943/fcba96c4-c77a-4fa5-941b-adf3bdb2610c)
