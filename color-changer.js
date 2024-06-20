@@ -11,10 +11,14 @@ function AssignAllTicketColors() {
 	for (let i = 0; i < ticketLinkElements.length; i++) {
 		let currentTicketLinkElement = ticketLinkElements[i]
 		let currentTicketTextElement = ticketTextElements[i]
-		let ticketNumber = GetTicketNumber(currentTicketLinkElement)
-		if (currentTicketLinkElement.href.includes("browse") && ticketNumber > 0) {
-			AssignTicketColor(currentTicketTextElement, ticketNumber)
-			AssignTicketColor(currentTicketLinkElement, ticketNumber)
+		if (currentTicketLinkElement !== undefined) {
+			let ticketNumber = GetTicketNumber(currentTicketLinkElement)
+			if (currentTicketLinkElement.href.includes("browse") && ticketNumber > 0) {
+				AssignTicketColor(currentTicketLinkElement, ticketNumber)
+				if (currentTicketTextElement !== undefined) {
+					AssignTicketColor(currentTicketTextElement, ticketNumber)
+				}
+			}
 		}
 	}
 }
@@ -29,7 +33,9 @@ observer.observe(document.body, { childList: true, subtree: true });
 function AssignTicketColor(ticketTextElement, seed) {
 	let uniqueHue = (seed * largeNumber) % 360
 	let uniqueColor = HsvToHex(uniqueHue, 1, 1)
-	ticketTextElement.style = "color: " + uniqueColor.toString() + " !important;"
+	if (ticketTextElement !== undefined) {
+		ticketTextElement.style = "color: " + uniqueColor.toString() + " !important;"
+	}
 }
 
 function GetTicketLinkElements() {
@@ -39,6 +45,8 @@ function GetTicketLinkElements() {
 	ticketLinkElements = ticketLinkElements.concat(Array.from(document.querySelectorAll('[data-testid="issue.views.issue-base.foundation.breadcrumbs.current-issue.item"]')))
 	// for https://goodstech.atlassian.net/jira/dashboards/*
 	ticketLinkElements = ticketLinkElements.concat(Array.from(document.getElementsByClassName("issue-link")))
+	// for https://goodstech.atlassian.net/issues/*
+  	ticketLinkElements = ticketLinkElements.concat(Array.from(document.querySelectorAll('[data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"]')))
 	return ticketLinkElements
 }
 
@@ -49,6 +57,8 @@ function GetTicketTextElements() {
 	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("_1wyb1tcg _vwz41f4h _k48pbfng _1dyzz5jk _1bsb1osq _19pkidpf _2hwxidpf _otyridpf _18u0idpf _ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _syaz1fxt _osi5fg65 _mc2h1hna _14fy1hna")))
 	// for https://goodstech.atlassian.net/jira/dashboards/*
 	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("issue-link")))
+	// for https://goodstech.atlassian.net/issues/*
+ 	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("_slp31hna _1i4q1hna _1nmz1hna _otyr1b66")))
 	return ticketTexts
 }
 
