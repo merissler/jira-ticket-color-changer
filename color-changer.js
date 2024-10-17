@@ -52,9 +52,9 @@ function GetTicketLinkElements() {
 
 function GetTicketTextElements() {
 	// for https://goodstech.atlassian.net/jira/your-work
-	var ticketTexts = Array.from(document.getElementsByClassName("bu4bgh-0 evJEbS"))
+	var ticketTexts = Array.from(document.getElementsByClassName("bu4bgh-0")) //bu4bgh-0 CNntJ
 	// for https://goodstech.atlassian.net/browse/*
-	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("_1wyb1tcg _vwz41f4h _k48pbfng _1dyzz5jk _1bsb1osq _19pkidpf _2hwxidpf _otyridpf _18u0idpf _ca0qidpf _u5f3idpf _n3tdidpf _19bvidpf _syaz1fxt _osi5fg65 _mc2h1hna _14fy1hna")))
+	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("css-1buvxpt")))
 	// for https://goodstech.atlassian.net/jira/dashboards/*
 	ticketTexts = ticketTexts.concat(Array.from(document.getElementsByClassName("issue-link")))
 	// for https://goodstech.atlassian.net/issues/*
