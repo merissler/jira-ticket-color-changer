@@ -6,8 +6,6 @@ Works in all Chromium-based browsers (chrome, edge, opera, etc.)
 
 Would also work in some Firefox-based browsers with a little modification
 
-Only works for people who work at Goods Technology Services
-
 ---
 
 Currently works on theses pages:
