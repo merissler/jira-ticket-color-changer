@@ -1,15 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "Jira Ticket Color Changer",
-  "description": "Assigns unique colors to tickets in Jira",
-  "version": "1.9",
+  "name": "Better Jira",
+  "description": "Adds colors to tickets and deletes the AI acronym underlines",
+  "version": "2.0",
   "icons": {
-    "512": "icon.png"
+    "1028": "icon.png"
   },
   "content_scripts": [
     {
       "js": [
-        "color-changer.js"
+        "color-changer.js",
+		"ai-deleter.js"
       ],
       "matches": [
         "https://goodstech.atlassian.net/*"
